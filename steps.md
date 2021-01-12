@@ -50,3 +50,11 @@ error[E0063]: missing field `pallet_ethereum` in initializer of `GenesisConfig`
 138 |     GenesisConfig {
     |     ^^^^^^^^^^^^^ missing `pallet_ethereum`
 ```
+
+### 4- The Ethereum genesis configuration
+
+https://substrate.dev/frontier-workshop/#/main-content/ethereum-genesis
+
+Those steps followed.
+
+It compiled successfully.
