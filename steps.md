@@ -36,3 +36,17 @@ Those steps followed.
 It compiled successfully.
 
 ### 3- Install the Ethereum Pallet
+
+https://substrate.dev/frontier-workshop/#/main-content/pallet-ethereum
+
+Those steps followed.
+
+It does not compile. It gives an error:
+
+```
+error[E0063]: missing field `pallet_ethereum` in initializer of `GenesisConfig`
+   --> node/src/chain_spec.rs:138:2
+    |
+138 |     GenesisConfig {
+    |     ^^^^^^^^^^^^^ missing `pallet_ethereum`
+```
