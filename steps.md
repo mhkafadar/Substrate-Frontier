@@ -28,3 +28,11 @@ error[E0063]: missing field `pallet_evm` in initializer of `GenesisConfig`
 It was an expected error so step 1 is successful.
 
 ### 2- Pallet EVM in the Genesis Config
+
+https://substrate.dev/frontier-workshop/#/main-content/evm-genesis
+
+Those steps followed.
+
+It compiled successfully.
+
+### 3- Install the Ethereum Pallet
