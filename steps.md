@@ -39,7 +39,7 @@ It compiled successfully.
 
 https://substrate.dev/frontier-workshop/#/main-content/pallet-ethereum
 
-Those steps followed.
+Those steps followed. 
 
 It does not compile. It gives an error:
 
@@ -50,6 +50,10 @@ error[E0063]: missing field `pallet_ethereum` in initializer of `GenesisConfig`
 138 |     GenesisConfig {
     |     ^^^^^^^^^^^^^ missing `pallet_ethereum`
 ```
+
+Extra step: pallet_ethereum added to cargo.toml
+
+It compiles now.
 
 ### 4- The Ethereum genesis configuration
 
@@ -67,4 +71,22 @@ Those steps followed.
 
 It compiled successfully.
 
+### 6- Installing the Runtime API
 
+https://substrate.dev/frontier-workshop/#/main-content/runtime-api
+
+Those steps followed.
+
+It does not compile:
+
+```
+ error[E0405]: cannot find trait `EthereumRuntimeRPCApi` in crate `frontier_rpc_primitives`
+     --> /Users/zaara/Code/Workshop/workshop/substrate3/substrate-node-template/runtime/src/lib.rs:147:31
+      |
+  147 | impl frontier_rpc_primitives::EthereumRuntimeRPCApi<Block> for Runtime {
+      |                               ^^^^^^^^^^^^^^^^^^^^^ not found in `frontier_rpc_primitives`
+      |
+  help: consider importing this trait
+      |
+  9   | use frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi;
+```
