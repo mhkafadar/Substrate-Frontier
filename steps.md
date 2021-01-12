@@ -58,3 +58,13 @@ https://substrate.dev/frontier-workshop/#/main-content/ethereum-genesis
 Those steps followed.
 
 It compiled successfully.
+
+### 5- Wrapping transactions
+
+https://substrate.dev/frontier-workshop/#/main-content/wrapping-transactions
+
+Those steps followed.
+
+It compiled successfully.
+
+
