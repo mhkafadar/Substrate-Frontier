@@ -95,3 +95,11 @@ It compiles now after following change:
 ```
 frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi<Block>
 ```
+
+### 7- Installing the FrontierBlockImport
+
+https://substrate.dev/frontier-workshop/#/main-content/block-import?id=install-the-frontier-block-import
+
+Those steps followed.
+
+It compiled successfully.
