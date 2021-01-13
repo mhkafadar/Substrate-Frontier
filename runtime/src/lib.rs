@@ -144,7 +144,7 @@ impl frontier_rpc_primitives::ConvertTransaction<opaque::UncheckedExtrinsic> for
 	}
 }
 
-impl frontier_rpc_primitives::EthereumRuntimeRPCApi<Block> for Runtime {
+impl frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi<Block> for Runtime {
 	fn chain_id() -> u64 {
 		<Runtime as pallet_evm::Trait>::ChainId::get()
 	}

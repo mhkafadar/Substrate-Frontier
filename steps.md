@@ -90,3 +90,8 @@ It does not compile:
       |
   9   | use frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi;
 ```
+It compiles now after following change:
+
+```
+frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi<Block>
+```
