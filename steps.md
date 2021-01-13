@@ -103,3 +103,40 @@ https://substrate.dev/frontier-workshop/#/main-content/block-import?id=install-t
 Those steps followed.
 
 It compiled successfully.
+
+### 8- Installing the RPC endpoint
+
+https://substrate.dev/frontier-workshop/#/main-content/rpc
+
+Those steps followed.
+
+It does not compile:
+
+
+```
+error[E0277]: the trait bound `RuntimeApiImpl<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>, sc_service::client::client::Client<sc_client_db::Backend<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>, sc_service::client::call_executor::LocalCallExecutor<sc_client_db::Backend<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>, NativeExecutor<service::Executor>>, sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>, node_template_runtime::RuntimeApi>>: frontier_rpc_primitives::EthereumRuntimeRPCApi<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>` is not satisfied
+   --> node/src/service.rs:152:13
+    |
+152 |             crate::rpc::create_full(deps)
+    |             ^^^^^^^^^^^^^^^^^^^^^^^ the trait `frontier_rpc_primitives::EthereumRuntimeRPCApi<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>` is not implemented for `RuntimeApiImpl<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>, sc_service::client::client::Client<sc_client_db::Backend<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>, sc_service::client::call_executor::LocalCallExecutor<sc_client_db::Backend<sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>>, NativeExecutor<service::Executor>>, sp_runtime::generic::Block<sp_runtime::generic::Header<u32, BlakeTwo256>, OpaqueExtrinsic>, node_template_runtime::RuntimeApi>>`
+    |
+   ::: node/src/rpc.rs:36:8
+    |
+36  | pub fn create_full<C, P, BE>(
+    |        ----------- required by a bound in this
+...
+49  |     C::Api: frontier_rpc_primitives::EthereumRuntimeRPCApi<Block>,
+    |             ----------------------------------------------------- required by this bound in `create_full`
+```
+
+I tried this line:
+
+`C::Api: frontier_rpc_primitives::runtime_decl_for_EthereumRuntimeRPCApi::EthereumRuntimeRPCApi<Block>`
+
+instead of this line:
+
+`C::Api: frontier_rpc_primitives::EthereumRuntimeRPCApi<Block>,`
+
+at line 49 of node/src/rpc.rs file.
+
+But it did not help.
